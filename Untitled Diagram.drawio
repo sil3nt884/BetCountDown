@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-30T12:58:39.857Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36" etag="e7ZexxYuQyxpbvihbD6B" version="13.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-30T12:59:43.508Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36" etag="AfOP0gr8GQ7w49MY2wyI" version="13.8.8" type="github">
   <diagram name="Page-1" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="2522" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -71,6 +71,9 @@
         </mxCell>
         <mxCell id="QSz69-KZC1hkT4Da6_BA-39" value="Https request" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
           <mxGeometry x="810" y="370" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QSz69-KZC1hkT4Da6_BA-40" value="&lt;div&gt;What is the main difference between these two functions?&amp;nbsp;&lt;/div&gt;&lt;div&gt;The first is not safe for SQL injection, as its allows for SQL to be written in via the data variable.&lt;/div&gt;&lt;div&gt;Why is one better than the other?&lt;/div&gt;&lt;div&gt;The other function is safe for SQL injection&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;const db = myDatabaseManager;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;const myDbFunc = async (data) =&amp;gt; {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; await db(INSERT INTO table (id,name,age)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; VALUES(${data.id},“{data.name}”, ${data.age})&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; ON DUPLICATE KEY UPDATE name =‘${data.name}”,age=${data.age};‘)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;const myOtherDbFunc = async (data) =&amp;gt; {&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; const updatedRows = await db(`UPDATE table SET (name, age) VALUES (&quot;${data.name}&quot;,${data.age}) WHERE id = ${data.id} RETURNING *;`)&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // If no rows were updated&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (!updatedRows) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; await db(`INSERT INTO table (id, name, age) VALUES(${data.id},&quot;${data.name}&quot;, ${data.age});`)&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }}&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-160" y="550" width="890" height="490" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
